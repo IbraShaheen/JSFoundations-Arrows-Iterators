@@ -5,12 +5,18 @@
  * - Logs every element of the array
  ************************************/
 
+//old sol.
+/*
 function logger(array){
     array.forEach(elem => console.log(elem));
-    //let aa = array.forEach(Element);
-    //return (array*1).forEach();
 }
-//console.log(array([1,2,3,4]));
+*/
+
+//*rev. sol.
+
+const logger = (array) =>  array.forEach(element => console.log(element));
+
+logger([1,2,3,4]);
 
 /*************************************
  * toCelsius(temperatures)
@@ -23,13 +29,17 @@ function logger(array){
  * The conversion is:
  *   C = (F - 32) * (5/9)
  ************************************/
+// old sol.
+/*
  const toCelsius = (temperatures)=> {
     temperatures = temperatures.map(temp => ((temp-32)*(5/9)));
     return temperatures;
 };
+*/
 
-/*const toCelsius = (temperatures) => {
-    temperatures.map(ele => console.log((ele-32)*(5/9)));}*/
+//*rev. sol
+
+const toCelsius = (temperatures) =>  temperatures.map(temp =>(temp - 32) * (5/9))
 
 /**************************************
  * hottestDays(temperatures, threshhold)
@@ -37,13 +47,19 @@ function logger(array){
  * - Accepts an array of temperatures
  * - Accepts a threshhold temperature
  * - Returns an array of temperatures
- *   that exceed the threshhold
+ *   that exceed the threshhold (largger than threshhold)
  ***************************************/
+
+// old sol.
 /*const hottestDays = (temperatures, threshhold) => {
     temperatures = temperatures.filter(temp);
     return temp>threshhold;
 };*/
-const hottestDays = (temperatures, threshhold) =>temperatures.filter((temp)=>temp > threshhold);
+
+//*rev. sol.
+
+const hottestDays = (temperatures, threshhold) => temperatures.filter(temp => temp > threshhold)
+
 
 /******************************************
  * logHottestDays(temperatures, threshhold)
@@ -59,7 +75,15 @@ const hottestDays = (temperatures, threshhold) =>temperatures.filter((temp)=>tem
  * hint: you can combine
  *       all previous functions
  *******************************************/
-const logHottestDays = (temperatures, threshhold) => logger(toCelsius(hottestDays (temperatures, threshhold)));
+
+//const logHottestDays = (temperatures, threshhold) => logger(toCelsius(hottestDays (temperatures, threshhold)));
+
+// *rev. sol.
+
+const logHottestDays = (temperatures, threshhold) =>  logger(toCelsius(hottestDays(temperatures, threshhold)))
+
+// arrow functions are really usefull ✔️✔️✔️✔️✔️
+//*don't do that again:
 
 
 // const logHottestDays = function (temperatures, threshhold) {
